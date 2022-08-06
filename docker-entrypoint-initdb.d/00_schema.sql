@@ -27,3 +27,10 @@ CREATE TABLE post_tags
     post_id BIGINT NOT NULL REFERENCES posts,
     tag     TEXT   NOT NULL
 );
+
+CREATE TABLE  tokens
+(
+    token TEXT PRIMARY KEY,
+    user_id BIGINT NOT NULL REFERENCES users,
+    created TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
